@@ -1,2 +1,236 @@
 # nimapinfotech_update
 upadate register login id and show project list
+
+
+_______----------------------------------------------------------------doc project--------------------------------
+
+ Project Information
+project name -project
+app name- my app
+'rest_framework',  using to api section- this framework use to make some api and serializers
+
+
+
+
+
+
+#  This  url to show all client list to use GET method
+
+GET CLIENTS LIST
+http://127.0.0.1:8000/project/api/clients/
+
+exmp-
+   [
+    {
+        "id": 1,
+        "created_by": "Rohit",
+        "client_name": "Infotech",
+        "created_at": "2022-09-14T06:59:23.666480Z",
+        "updated_at": "2022-09-14T09:48:41.615620Z"
+    },
+    {
+        "id": 2,
+        "created_by": "Rohit",
+        "client_name": "Neetu Kushwaha",
+        "created_at": "2022-09-14T07:01:59.560053Z",
+        "updated_at": "2022-09-14T07:01:59.560053Z"
+    },
+    {
+        "id": 3,
+        "created_by": "Rohit",
+        "client_name": "Nimap",
+        "created_at": "2022-09-14T07:02:22.674394Z",
+        "updated_at": "2022-09-14T07:02:22.674394Z"
+    },
+ This  url to show  id  client list to use GET method  post method not allow
+GET CLIENTS Details( put)
+http://127.0.0.1:8000/project/api/clients/3
+
+exp-
+{
+    "id": 3,
+    "created_by": "Rohit",
+    "client_name": "Nimap",
+    "created_at": "2022-09-14T07:02:22.674394Z",
+    "updated_at": "2022-09-14T07:02:22.674394Z"
+}
+
+
+
+and also update any datail to use put method which use  id
+ this urls-
+    http://127.0.0.1:8000/project/api/clients/2
+  required data-
+
+    {
+    "client_name": [
+        "This field is required."
+    ],
+    "created_by": [
+        "This field is required."
+    ]
+}
+
+
+to filed
+
+using put method and go to body update tha required values
+
+
+    {
+    "client_name": [
+        "priya Kushwaha"
+    ],
+    "created_by": [
+        "1."
+    ]
+}
+
+# created_by must be Integer values
+to update using put method
+
+
+exp-
+{
+    "id": 2,
+    "client_name": "priya kushwaha",
+    "created_at": "2022-09-14T07:01:59.560053Z",
+    "updated_at": "2022-09-15T04:25:40.653861Z",
+    "created_by": 1
+}
+
+
+ then user to delete method
+
+ Delete method
+ http://127.0.0.1:8000/project/api/clients/9
+     {
+        "id": 9,
+        "created_by": "Rohit",
+        "client_name": "Wipro",
+        "created_at": "2022-09-14T07:33:25.130623Z",
+        "updated_at": "2022-09-14T07:33:25.130623Z"
+    }
+
+
+    then
+
+    {
+    "message": "Client Deleted Successfully"
+}
+
+then project url
+
+http://127.0.0.1:8000/project/api/projects/
+to all show  data
+[
+    {
+        "id": 1,
+        "project_name": "Project 1",
+        "created_at": "2022-09-14T08:40:39.641231Z",
+        "created_by": "Rohit"
+    },
+    {
+        "id": 2,
+        "project_name": "Project B",
+        "created_at": "2022-09-14T09:18:09.794871Z",
+        "created_by": "Rohit"
+    },
+    {
+        "id": 3,
+        "project_name": "Project c",
+        "created_at": "2022-09-14T09:38:11.516173Z",
+        "created_by": "Rohit"
+    }
+]
+
+
+
+then project register url
+http://127.0.0.1:8000/project/api/projects/
+
+must be using post mathod and required
+
+    {
+    "client_name": [
+        "This field is required." # must be integer
+    ],
+    "created_by": [
+        "This field is required."# integer
+    ]
+
+      "project_name": [
+        "This field is required."# must be str
+
+}
+
+   http://127.0.0.1:8000/project/api/projects/
+
+
+"project e Register Successfully"
+
+
+add new login and signup filed
+
+
+  http://127.0.0.1:8000/project/api/signup/
+
+ required-
+    'username':"neetu12",
+    'password':'neetu12',
+    'email': 'neetu12@gmail.com'signup
+
+    than mgs
+    {  neetu12 Register Successfully."}
+
+ then login
+ http://127.0.0.1:8000/project/api/login/
+
+
+ required-
+    'username':"neetu12",
+    'password':'neetu12',
+
+  mgs neetu12 Register Successfully
+
+
+
+  then redirct to client list to all funstion
+
+  using this Authention= permission_classes = [IsAuthenticated]
+    to show all client list ,client update,new add, client fillter
+
+
+ <new project id with register>#new update
+
+ "http://127.0.0.1:8000/project/api/projects/
+
+ required
+ post method
+   auth=('neetu','neetu'),data=
+
+
+
+   username = "neetu"
+   password ="neetu"
+
+   and show assing project list
+   sem url-"http://127.0.0.1:8000/project/api/projects/
+   required filds
+
+    'project_name':"project_1",
+    'client_name':"3",
+
+    then to show all project list
+
+
+
+
+this is compeleted my code
+
+
+
+
+
+
+
